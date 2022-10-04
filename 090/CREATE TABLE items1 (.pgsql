@@ -1,0 +1,4 @@
+CREATE TABLE items1 (
+    iID SERIAL PRIMARY KEY,
+    iName VARCHAR(50) NOT NULL
+);

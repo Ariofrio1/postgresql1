@@ -1,0 +1,3 @@
+CREATE TABLE people1
+( pid SERIAL PRIMARY KEY,
+pfirstName VARCHAR(50) NOT NULL);

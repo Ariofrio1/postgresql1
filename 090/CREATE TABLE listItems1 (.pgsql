@@ -1,0 +1,7 @@
+CREATE TABLE listItems1 (
+    liID SERIAL PRIMARY KEY,
+    lID INT REFERENCES lists1 NOT NULL,
+    iID INT REFERENCES items1 NOT NULL,
+    liDesired INT NOT NULL DEFAULT 1,
+    liPurchased INT NOT NULL DEFAULT 0
+);
