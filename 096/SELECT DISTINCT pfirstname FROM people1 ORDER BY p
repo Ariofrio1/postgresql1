@@ -1,0 +1,1 @@
+SELECT DISTINCT pfirstname FROM people1 ORDER BY pfirstname DESC;
