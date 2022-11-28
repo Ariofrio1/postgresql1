@@ -1,0 +1,1 @@
+SELECT pfirstname, plastname, pdob FROM people1 WHERE pdob > '2001-06-20 16:39:08';

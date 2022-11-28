@@ -1,0 +1,9 @@
+SELECT
+	people1.pfirstname,
+	people1.plastname,
+	lists1.lname,
+	items1.iname
+	FROM people1 NATURAL LEFT JOIN lists1
+		NATURAL LEFT JOIN listitems1
+		NATURAl LEFT JOIN items1
+	LIMIT 20;

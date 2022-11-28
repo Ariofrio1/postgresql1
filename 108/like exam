@@ -1,0 +1,3 @@
+SELECT pfirstname, plastname, pstate, pcity FROM PEOPLE1 WHERE pstate LIKE 'A_';
+--SELECT pfirstname, plastname, pstate, pcity FROM PEOPLE1 where pcity LIKE 'A%';
+--SELECT pfirstname, plastname, pstate, pcity FROM PEOPLE1 where pcity LIKE '%a%';

@@ -1,0 +1,10 @@
+SELECT
+	pfirstname,
+	plastname,
+	COUNT(lid) AS "num lists",
+    COUNT(liid) AS "num list items"
+	FROM people1 NATURAL LEFT JOIN lists1
+        NATURAL LEFT JOIN listitems1
+    GROUP BY pfirstname, plastname
+    --HAVING COUNT(liid) > COUNT(lid)
+    ORDER BY "num list items" DESC, "num lists" DESC;

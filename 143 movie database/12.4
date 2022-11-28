@@ -1,0 +1,11 @@
+-- SELECT pfirstname, plastname FROM people1 LIMIT 10;
+
+--SELECT pfirstname, plastname, lname FROM 
+--	people1 LEFT JOIN lists1 ON (people1.pid = lists1.pid) 
+--	LIMIT 10;
+
+SELECT pfirstname, plastname, lname, iname FROM
+	people1 LEFT JOIN lists1 ON (people1.pid = lists1.pid)
+	LEFT JOIN listitems1 USING (lid)
+	NATURAL LEFT JOIN items1
+	LIMIT 10;		

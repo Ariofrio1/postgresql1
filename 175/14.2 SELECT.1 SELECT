@@ -1,0 +1,9 @@
+SELECT
+	pfirstname,
+	plastname,
+	(SELECT COUNT(*) FROM lists1 WHERE lists1.pid = people1.pid) AS amt
+	FROM people1
+	ORDER by amt DESC;
+
+
+

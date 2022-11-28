@@ -1,0 +1,18 @@
+-- SUBQUERY VALUE
+--SELECT pfirstname, plastname, 
+--(SELECT COUNT(*) FROM lists1 WHERE people1.pid = lists1.pid) AS AMT
+--FROM people1 ORDER BY AMT DESC;
+-- ... just fyi here ...
+SELECT pfirstname, plastname, lid, liid FROM
+people1 JOIN lists1 USING (pid)
+JOIN listitems1 USING (lid);
+-- ... just fyi here ...
+-- SELECT pfirstname, plastname, lid, liid, iname FROM
+-- people JOIN lists USING (pid)
+-- JOIN listitems USING (lid)
+-- JOIN items USING (iid);
+
+-- SUBQUERY FILTER
+-- SELECT pfirstname, plastname, ppoints FROM people WHERE ppoints = (SELECT MAX(ppoints) FROM people);
+-- SELECT pfirstname, plastname, ppoints FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people);
+-- SELECT COUNT(*) FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people);

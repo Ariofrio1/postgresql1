@@ -1,0 +1,1 @@
+SELECT * FROM "people1" LIMIT 10;

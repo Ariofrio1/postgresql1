@@ -1,0 +1,33 @@
+SELECT
+    pfirstname,
+	plastname,
+	COUNT(liid)
+	FROM people1 NATURAL LEFT JOIN lists1
+		NATURAL LEFT JOIN listitems1
+	GROUP BY pfirstname, plastname
+	ORDER BY count DESC;
+
+SELECT
+	pfirstname,
+	plastname,
+	lid
+	FROM people1 NATURAL JOIN lists1
+	WHERE pfirstname = 'Zkugjyqoppe';
+
+SELECT
+	pfirstname,
+	plastname,
+	liid
+	FROM people1 NATURAL JOIN lists1
+		NATURAL JOIN listitems1
+	WHERE pfirstname = 'Zkugjyqoppe';
+
+SELECT
+	pfirstname,
+	plastname,
+	(SELECT COUNT (lid) FROM lists1 WHERE lists1.pid = people1.pid) AS "num lists",
+	COUNT(liid) AS "num list items"
+	FROM people1 NATURAL LEFT JOIN lists1
+		NATURAL LEFT JOIN listitems1
+	GROUP BY pid, pfirstname, plastname
+	ORDER BY "num list items" DESC, "num lists" DESC;

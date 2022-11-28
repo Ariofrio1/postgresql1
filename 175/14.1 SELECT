@@ -1,0 +1,11 @@
+--SELECT
+--	pfirstname,
+--	plastname,
+--	ppoints
+--	FROM people1
+--	WHERE ppoints > (SELECT AVG(ppoints) FROM people1);
+
+SELECT
+	COUNT(*)
+	FROM people1
+	WHERE ppoints > (SELECT AVG(ppoints) FROM people1);

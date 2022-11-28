@@ -1,0 +1,11 @@
+SELECT
+	pfirstname,
+	plastname,
+	(SELECT COUNT(*) FROM listitems1 WHERE listitems1.lid = lists1.lid)
+	FROM people1 JOIN lists1 USING (pid)
+	WHERE (SELECT COUNT(*) FROM listitems1 WHERE listitems1.lid = lists1.lid) > 1
+	ORDER BY count DESC;
+	
+
+
+

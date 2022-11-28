@@ -1,0 +1,14 @@
+SELECT rentals.rid,customers.cname FROM 
+	rentals JOIN customers USING (cid);
+
+SELECT rentals.rid, (SELECT customers.cname FROM customers
+	WHERE rentals.cid = customers.cid) AS "name"
+	FROM rentals;	
+
+SELECT customers.cname,
+	(SELECT COUNT(*) FROM rentals
+		WHERE customers.cid=rentals.cid) AS "# Rentals"
+	FROM customers;
+
+SELECT people1.pid, people1.pfirstname FROM people1
+	WHERE people1.pid > (SELECT AVG(people1.pid) FROM people1);

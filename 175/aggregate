@@ -1,0 +1,35 @@
+-- AGGREGATES
+SELECT COUNT(*) FROM people1;
+SELECT COUNT(pid) FROM people1;
+SELECT COUNT(*) AS "OR Pop" FROM people1 WHERE pstate = 'OR';
+SELECT SUM(ppoints) FROM people1;
+SELECT AVG(ppoints) FROM people1;
+SELECT MAX(ppoints) FROM people1;
+SELECT MIN(ppoints) FROM people1;
+SELECT MIN(pdob) FROM people1;
+SELECT MAX(pdob) FROM people1;
+-- ... just fyi here ...
+SELECT pfirstname, plastname, ppoints FROM people1 ORDER BY ppoints DESC LIMIT 10;
+
+-- DISTINCT COUNT
+-- SELECT COUNT(DISTINCT pcity) FROM people;
+-- Select DISTINCT pcity FROM people;
+
+-- SUBQUERY VALUE
+-- SELECT pfirstname, plastname, 
+-- (SELECT COUNT(*) FROM lists WHERE people.pid = lists.pid) AS AMT
+-- FROM people ORDER BY AMT DESC;
+-- ... just fyi here ...
+-- SELECT pfirstname, plastname, lid, liid FROM
+-- people JOIN lists USING (pid)
+-- JOIN listitems USING (lid);
+-- ... just fyi here ...
+-- SELECT pfirstname, plastname, lid, liid, iname FROM
+-- people JOIN lists USING (pid)
+-- JOIN listitems USING (lid)
+-- JOIN items USING (iid);
+
+-- SUBQUERY FILTER
+-- SELECT pfirstname, plastname, ppoints FROM people WHERE ppoints = (SELECT MAX(ppoints) FROM people);
+-- SELECT pfirstname, plastname, ppoints FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people);
+-- SELECT COUNT(*) FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people);

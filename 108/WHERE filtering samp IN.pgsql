@@ -1,0 +1,2 @@
+SELECT pfirstname, plastname, pstate, pcity FROM PEOPLE1 WHERE pstate IN ('CA', 'WA', 'OR');
+--SELECT pfirstname, plastname, pstate, pcity FROM people1 WHERE pstate = 'CA' OR pstate = 'WA' OR pstate = 'OR'; 

@@ -1,0 +1,20 @@
+--SELECT DISTINCT
+--	pcity,
+--	(SELECT COUNT(*) FROM people1 AS p WHERE p.pcity = people1.pcity)
+--	FROM people1;
+
+SELECT
+    pfirstname,
+    plastname,
+    COUNT(*) AS "# of items1"
+    FROM people1
+    JOIN lists1 USING(pid)
+    JOIN listitems1 USING(lid)
+    GROUP BY pfirstname, plastname
+    ORDER BY "# of items1" DESC;
+
+SELECT pfirstname, listitems1
+    FROM people1
+    JOIN lists1 USING(pid)
+    JOIN listitems1 USING(lid) 
+    WHERE pfirstname = 'Ideipepzekir';

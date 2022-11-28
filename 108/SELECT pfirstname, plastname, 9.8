@@ -1,0 +1,6 @@
+SELECT pfirstname, plastname, pfavorites -> 'Desserts' -> 0
+FROM PEOPLE1
+WHERE pfavorites -> 'Desserts' ->> 0 ILIKE '%a%';
+
+
+

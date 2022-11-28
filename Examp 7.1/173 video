@@ -1,0 +1,17 @@
+-- SELECT pcity, COUNT(*) AS "population" FROM people1 GROUP BY pcity;
+
+SELECT
+    pfirstname,
+    plastname,
+    COUNT(*) AS "# of items1"
+    FROM people1
+    JOIN lists1 USING(pid)
+    JOIN listitems1 USING(lid)
+    GROUP BY pfirstname, plastname
+    ORDER BY "# of items1" DESC;
+
+SELECT pfirstname, listitems1
+    FROM people1
+    JOIN lists1 USING(pid)
+    JOIN listitems1 USING(lid) 
+    WHERE pfirstname = 'Ideipepzekir';
